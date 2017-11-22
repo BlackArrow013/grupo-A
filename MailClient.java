@@ -48,7 +48,11 @@ public class MailClient
     public MailItem getNextMailItem()
     {
         MailItem item = server.getNextMailItem(user);
-        if(item.getMessage().contains("regalo") || item.getMessage().contains("viagra")) {
+        if (item == null) {
+            
+        }
+        
+        else if (item.getMessage().contains("regalo") || item.getMessage().contains("viagra")) {
             item = null;
         }        
         else {
